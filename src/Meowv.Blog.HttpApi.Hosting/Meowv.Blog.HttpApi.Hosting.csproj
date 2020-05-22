@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Menus\**" />
+	  <Compile Remove="Pages\**" />
+	  <Compile Remove="Views\**" />
+	  <Content Remove="Menus\**" />
+	  <Content Remove="Pages\**" />
+	  <Content Remove="Views\**" />
+	  <EmbeddedResource Remove="Menus\**" />
+	  <EmbeddedResource Remove="Pages\**" />
+	  <EmbeddedResource Remove="Views\**" />
+	  <None Remove="Menus\**" />
+	  <None Remove="Pages\**" />
+	  <None Remove="Views\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="BlogBrandingProvider.cs" />
+	  <Compile Remove="BlogWebAutoMapperProfile.cs" />
+	  <Compile Remove="BlogWebModule.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="abp.resourcemapping.js" />
+	  <None Remove="gulpfile.js" />
+	  <None Remove="tempkey.rsa" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Meowv.Blog.HttpApi\Meowv.Blog.HttpApi.csproj" />
+		<PackageReference Include="Volo.Abp.Autofac" Version="2.8.0" />
+	</ItemGroup>
+
+</Project>
