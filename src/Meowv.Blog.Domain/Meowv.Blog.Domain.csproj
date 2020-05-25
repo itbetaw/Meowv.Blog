@@ -7,6 +7,11 @@
     <RootNamespace>Meowv.Blog</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+    <DocumentationFile>..\Meowv.Blog.HttpApi.Hosting\Meowv.Blog.Domain.xml\Meowv.Blog.Domain.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Meowv.Blog.Domain.Shared\Meowv.Blog.Domain.Shared.csproj" />
   </ItemGroup>

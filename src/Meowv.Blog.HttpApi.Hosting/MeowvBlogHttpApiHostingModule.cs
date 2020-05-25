@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Meowv.Blog.Swagger;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,10 @@ using Volo.Abp.Modularity;
 
 namespace Meowv.Blog.HttpApi.Hosting
 {
-    [DependsOn(typeof(AbpAspNetCoreMvcModule), typeof(AbpAutofacModule))]
+    [DependsOn(typeof(AbpAspNetCoreMvcModule),
+        typeof(MeowvBlogHttpApiModule),
+        typeof(MeowvBlogSwaggerModule),
+        typeof(AbpAutofacModule))]
     public class MeowvBlogHttpApiHostingModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
