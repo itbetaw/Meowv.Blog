@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Volo.Abp.Domain.Entities;
 
-namespace Meowv.Blog.Domain.Blog
+namespace Meowv.Blog.Application.Contracts.Blog
 {
-    /// <summary>
-    /// Post
-    /// </summary>
-    public class Post : Entity<int>
+    public class PostDto
     {
         /// <summary>
         /// 标题

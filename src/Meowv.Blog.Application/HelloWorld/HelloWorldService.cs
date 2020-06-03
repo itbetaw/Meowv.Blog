@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Meowv.Blog.HelloWorld
+namespace Meowv.Blog.Application.HelloWorld
 {
     public class HelloWorldService : MeowvBlogApplicationServiceBase, IHelloWorldService
     {

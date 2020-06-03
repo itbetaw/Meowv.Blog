@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Meowv.Blog.Configurations
+namespace Meowv.Blog.Domain.Configurations
 {
     public class AppSettings
     {

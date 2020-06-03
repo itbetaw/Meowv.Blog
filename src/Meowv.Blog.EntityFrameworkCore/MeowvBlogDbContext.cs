@@ -1,12 +1,9 @@
-﻿using Meowv.Blog.Blog;
+﻿using Meowv.Blog.Domain.Blog;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 
-namespace Meowv.Blog
+namespace Meowv.Blog.EntityFrameworkCore
 {
     [ConnectionStringName("SqlServer")]
     public class MeowvBlogDbContext : AbpDbContext<MeowvBlogDbContext>

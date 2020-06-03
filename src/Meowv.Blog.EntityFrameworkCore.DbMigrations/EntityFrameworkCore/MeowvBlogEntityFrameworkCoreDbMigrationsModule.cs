@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Volo.Abp.Modularity;
 
-namespace Meowv.Blog.EntityFrameworkCore
+namespace Meowv.Blog.EntityFrameworkCore.DbMigrations.EntityFrameworkCore
 {
 
     [DependsOn(typeof(MeowvBlogFrameworkCoreModule))]

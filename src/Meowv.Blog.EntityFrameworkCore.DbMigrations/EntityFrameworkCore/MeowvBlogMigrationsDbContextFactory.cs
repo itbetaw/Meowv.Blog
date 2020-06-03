@@ -1,13 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc.Formatters;
+﻿using Meowv.Blog.EntityFrameworkCore.DbMigrations.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
-namespace Meowv.Blog.EntityFrameworkCore
+namespace Meowv.Blog.EntityFrameworkCore.DbMigrations
 {
     public class MeowvBlogMigrationsDbContextFactory : IDesignTimeDbContextFactory<MeowvBlogMigrationsDbContext>
     {

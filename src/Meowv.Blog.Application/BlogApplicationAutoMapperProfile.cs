@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace Meowv.Blog
+namespace Meowv.Blog.Application
 {
     public class BlogApplicationAutoMapperProfile : Profile
     {

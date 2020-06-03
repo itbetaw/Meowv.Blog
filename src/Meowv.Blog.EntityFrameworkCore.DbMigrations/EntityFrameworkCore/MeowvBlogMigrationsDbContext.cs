@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using Volo.Abp.EntityFrameworkCore;
 
-namespace Meowv.Blog.EntityFrameworkCore
+namespace Meowv.Blog.EntityFrameworkCore.DbMigrations.EntityFrameworkCore
 {
     public class MeowvBlogMigrationsDbContext : AbpDbContext<MeowvBlogMigrationsDbContext>
     {

@@ -2,7 +2,7 @@
 using Volo.Abp.Modularity;
 using Volo.Abp.VirtualFileSystem;
 
-namespace Meowv.Blog
+namespace Meowv.Blog.Domain.Shared
 {
     [DependsOn(
         typeof(AbpIdentityDomainSharedModule)

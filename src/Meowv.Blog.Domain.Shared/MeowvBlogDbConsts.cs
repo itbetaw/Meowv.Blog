@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Meowv.Blog
+namespace Meowv.Blog.Domain.Shared
 {
     public class MeowvBlogDbConsts
     {

@@ -1,4 +1,5 @@
-﻿using Meowv.Blog.Swagger;
+﻿using Meowv.Blog.EntityFrameworkCore;
+using Meowv.Blog.Swagger;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -15,7 +16,9 @@ namespace Meowv.Blog.HttpApi.Hosting
     [DependsOn(typeof(AbpAspNetCoreMvcModule),
         typeof(MeowvBlogHttpApiModule),
         typeof(MeowvBlogSwaggerModule),
-        typeof(AbpAutofacModule))]
+        typeof(AbpAutofacModule),
+       typeof(MeowvBlogFrameworkCoreModule)
+        )]
     public class MeowvBlogHttpApiHostingModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

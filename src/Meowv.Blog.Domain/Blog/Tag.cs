@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Volo.Abp.Domain.Entities;
 
-namespace Meowv.Blog.Blog
+namespace Meowv.Blog.Domain.Blog
 {
     /// <summary>
     /// Tag

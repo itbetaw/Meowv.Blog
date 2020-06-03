@@ -1,7 +1,8 @@
-﻿using Volo.Abp.Identity;
+﻿using Meowv.Blog.Domain.Shared;
+using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
 
-namespace Meowv.Blog
+namespace Meowv.Blog.Domain
 {
     [DependsOn(
         typeof(AbpIdentityDomainModule),

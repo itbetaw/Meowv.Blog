@@ -1,8 +1,5 @@
-﻿using Meowv.Blog.HelloWorld;
+﻿using Meowv.Blog.Application.HelloWorld;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Volo.Abp.AspNetCore.Mvc;
 
 namespace Meowv.Blog.HttpApi.Controllers

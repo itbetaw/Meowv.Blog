@@ -1,12 +1,10 @@
-﻿using Meowv.Blog.Blog;
+﻿using Meowv.Blog.Domain.Blog;
+using Meowv.Blog.Domain.Shared;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Volo.Abp;
-using static Meowv.Blog.MeowvBlogDbConsts;
+using static Meowv.Blog.Domain.Shared.MeowvBlogDbConsts;
 
-namespace Meowv.Blog
+namespace Meowv.Blog.EntityFrameworkCore
 {
     public static class MeowvBlogDbContextModelCreatingExtensions
     {
