@@ -118,5 +118,10 @@
             展示名称
             </summary>
         </member>
+        <member name="P:Meowv.Blog.Domain.Configurations.AppSettings.ApiVersion">
+            <summary>
+            ApiVersion
+            </summary>
+        </member>
     </members>
 </doc>
