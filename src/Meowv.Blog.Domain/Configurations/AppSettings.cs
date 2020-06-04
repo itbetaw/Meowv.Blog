@@ -12,7 +12,8 @@ namespace Meowv.Blog.Domain.Configurations
         static AppSettings()
         {
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.jons", true, true);
+                .AddJsonFile("appsettings.json", true, true);
+            _config = builder.Build();
         }
         public static string EnableDb => _config["ConnectionStrings:Enable"];
         public static string ConnectionString => _config.GetConnectionString(EnableDb);
