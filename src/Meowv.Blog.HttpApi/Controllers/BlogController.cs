@@ -2,6 +2,7 @@
 using Meowv.Blog.Application.Contracts.Blog;
 using Meowv.Blog.Domain.Shared;
 using Meowv.Blog.ToolKits.Base;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,7 @@ namespace Meowv.Blog.HttpApi.Controllers
         /// <param name="dto"></param>
         /// <returns></returns>
         [HttpPost]
+        [Authorize]
         public async Task<ServiceResult<string>> InsertPostAsync([FromBody] PostDto dto)
         {
             return await _blogService.InsertPostAsync(dto);
@@ -39,6 +41,7 @@ namespace Meowv.Blog.HttpApi.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete]
+        [Authorize]
         public async Task<ServiceResult> DeletePostAsync([Required] int id)
         {
             return await _blogService.DeletePostAsync(id);
@@ -50,6 +53,7 @@ namespace Meowv.Blog.HttpApi.Controllers
         /// <param name="dto"></param>
         /// <returns></returns>
         [HttpPut]
+        [Authorize]
         public async Task<ServiceResult<string>> UpdatePostAsync([Required] int id, [FromBody] PostDto dto)
         {
             return await _blogService.UpdatePostAsync(id, dto);

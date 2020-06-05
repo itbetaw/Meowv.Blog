@@ -24,6 +24,12 @@ namespace Meowv.Blog.Swagger.Filters
                     Name="HelloWorld",
                     Description="通用公共接口",
                     ExternalDocs=new OpenApiExternalDocs(){ Description="这是一些通用的公共接口"}
+                },
+                new OpenApiTag
+                {
+                    Name = "Auth",
+                    Description = "JWT模式认证授权",
+                    ExternalDocs = new OpenApiExternalDocs { Description = "JSON Web Token" }
                 }
             };
             swaggerDoc.Tags = tags.OrderBy(x => x.Name).ToList();

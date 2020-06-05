@@ -1,7 +1,11 @@
-﻿using Meowv.Blog.EntityFrameworkCore;
+﻿using Meowv.Blog.Domain.Configurations;
+using Meowv.Blog.EntityFrameworkCore;
 using Meowv.Blog.Swagger;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +27,26 @@ namespace Meowv.Blog.HttpApi.Hosting
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            base.ConfigureServices(context);
+            context.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ClockSkew = TimeSpan.FromSeconds(30),
+                        ValidAudience = AppSettings.JWT.Domain,
+                        ValidIssuer = AppSettings.JWT.Domain,
+                        IssuerSigningKey = new SymmetricSecurityKey(AppSettings.JWT.SecurityKey.GetBytes())
+                    };
+
+                });
+            //认证授权
+            context.Services.AddAuthorization();
+            //http请求
+            context.Services.AddHttpClient();
         }
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
@@ -45,6 +68,12 @@ namespace Meowv.Blog.HttpApi.Hosting
             {
                 endpoints.MapControllers();
             });
+
+            //身份验证
+            app.UseAuthentication();
+
+            //认证授权
+            app.UseAuthorization();
         }
     }
 }

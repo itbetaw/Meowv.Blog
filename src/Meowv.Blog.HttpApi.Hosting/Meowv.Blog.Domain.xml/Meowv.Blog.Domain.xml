@@ -123,5 +123,35 @@
             ApiVersion
             </summary>
         </member>
+        <member name="T:Meowv.Blog.Domain.Configurations.AppSettings.JWT">
+            <summary>
+            JWT
+            </summary>
+        </member>
+        <member name="F:Meowv.Blog.Configurations.GitHubConfig.API_Authorize">
+            <summary>
+            GET请求，跳转GitHub登录界面，获取用户授权，得到Code
+            </summary>
+        </member>
+        <member name="F:Meowv.Blog.Configurations.GitHubConfig.API_AccessToken">
+            <summary>
+            POST请求，根据Code得到access_token
+            </summary>
+        </member>
+        <member name="F:Meowv.Blog.Configurations.GitHubConfig.API_User">
+            <summary>
+            GET请求，根据access_token得到用户信息
+            </summary>
+        </member>
+        <member name="F:Meowv.Blog.Configurations.GitHubConfig.Redirect_Uri">
+            <summary>
+            Authorization callback URL
+            </summary>
+        </member>
+        <member name="F:Meowv.Blog.Configurations.GitHubConfig.ApplicationName">
+            <summary>
+            Application name
+            </summary>
+        </member>
     </members>
 </doc>
