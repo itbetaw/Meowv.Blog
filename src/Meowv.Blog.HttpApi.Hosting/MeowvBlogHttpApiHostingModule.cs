@@ -5,6 +5,7 @@ using Meowv.Blog.HttpApi.Hosting.Middleware;
 using Meowv.Blog.Swagger;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
@@ -50,6 +51,15 @@ namespace Meowv.Blog.HttpApi.Hosting
             context.Services.AddAuthorization();
             //http请求
             context.Services.AddHttpClient();
+
+            context.Services.AddRouting(options =>
+            {
+                //设置URL为小写
+                options.LowercaseUrls = true;
+                //在生成的URL后面加斜杠
+                options.AppendTrailingSlash = true;
+            });
+
         }
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
@@ -80,6 +90,21 @@ namespace Meowv.Blog.HttpApi.Hosting
 
             //异常处理中间件
             app.UseMiddleware<ExceptionHandlerMiddleware>();
+
+            // 使用HSTS中间件
+            app.UseHsts();
+
+            // 使用默认的跨域设置
+            app.UseCors();
+
+            // HTTP请求转HTTPS
+            app.UseHttpsRedirection();
+
+            // 转发将标头代理到当前请求，配合 Nginx 使用，获取用户真实IP
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders=ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
         }
     }
 }
